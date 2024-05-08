@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secuencia numérica</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Secuencia numérica</h1>
+        <p>Ingrese la semilla (1 ≤ S < 10000):</p>
+        <input type="number" id="seedInput" min="1" max="9999">
+        <button onclick="calculateSequence()">Calcular</button>
+        <p id="output"></p>
+    </div>
+
+    <script>
+        function calculateSequence() {
+            const seedInput = document.getElementById('seedInput');
+            const seed = parseInt(seedInput.value);
+
+            if (isNaN(seed) || seed < 1 || seed >= 10000) {
+                alert('Por favor, ingrese una semilla válida (1 ≤ S < 10000)');
+                return;
+            }
+
+            const sequence = [seed];
+            let current = seed;
+            let maxValue = seed;
+
+            while (current !== 1) {
+                if (current % 2 === 0) {
+                    current = current / 2;
+                } else {
+                    current = current * 3 + 1;
+                }
+                sequence.push(current);
+                maxValue = Math.max(maxValue, current);
+            }
+
+            const outputElement = document.getElementById('output');
+            outputElement.innerHTML = `Longitud de la secuencia: ${sequence.length}<br>Valor máximo: ${maxValue}`;
+        }
+    </script>
+</body>
+</html>
