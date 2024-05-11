@@ -1,6 +1,5 @@
 'use client';
 import { useState } from "react";
-import { useTheme } from 'next-themes';
 
 export interface ZooAnimal {
     idAnimal: number;
@@ -67,7 +66,6 @@ export interface ZooAnimal {
     return (
         <div className="container mx-auto my-8">
           <h1 className="text-3xl font-bold mb-4">Lista de Animales</h1>
-          {/* Agregar nuevo animal */}
           <div className="mb-4">
             <h2 className="text-xl font-bold mb-2">Agregar nuevo animal</h2>
             <input
@@ -102,7 +100,6 @@ export interface ZooAnimal {
               Agregar
             </button>
           </div>
-          {/* Tabla de animales */}
           <table className="table-auto w-full">
             <thead>
               <tr>

@@ -1,6 +1,4 @@
 'use client';
-import { useTheme } from 'next-themes';
-// pages/index.tsx
 import ZooAnimalList, {
   getAnimalesJaula5PesoMenor3kg,
   getCantidadAnimalesFelinos,
